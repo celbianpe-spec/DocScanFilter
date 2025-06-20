@@ -1,0 +1,15 @@
+/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Infrastructure/bin/Debug/net8.0/Infrastructure.deps.json
+/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Infrastructure/bin/Debug/net8.0/Infrastructure.dll
+/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Infrastructure/bin/Debug/net8.0/Infrastructure.pdb
+/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Infrastructure/bin/Debug/net8.0/Domain.dll
+/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Infrastructure/bin/Debug/net8.0/Domain.pdb
+/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Infrastructure/obj/Debug/net8.0/Infrastructure.csproj.AssemblyReference.cache
+/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Infrastructure/obj/Debug/net8.0/Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Infrastructure/obj/Debug/net8.0/Infrastructure.AssemblyInfoInputs.cache
+/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Infrastructure/obj/Debug/net8.0/Infrastructure.AssemblyInfo.cs
+/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Infrastructure/obj/Debug/net8.0/Infrastructure.csproj.CoreCompileInputs.cache
+/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Infrastructure/obj/Debug/net8.0/Infrastr.15EFFBFE.Up2Date
+/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Infrastructure/obj/Debug/net8.0/Infrastructure.dll
+/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Infrastructure/obj/Debug/net8.0/refint/Infrastructure.dll
+/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Infrastructure/obj/Debug/net8.0/Infrastructure.pdb
+/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Infrastructure/obj/Debug/net8.0/ref/Infrastructure.dll

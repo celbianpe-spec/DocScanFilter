@@ -1,0 +1,190 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/ConsoleApp/ConsoleApp.csproj": {}
+  },
+  "projects": {
+    "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Application/Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Application/Application.csproj",
+        "projectName": "Application",
+        "projectPath": "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Application/Application.csproj",
+        "packagesPath": "/Users/celsobianchipuican/.nuget/packages/",
+        "outputPath": "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Application/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/celsobianchipuican/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Domain/Domain.csproj": {
+                "projectPath": "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Domain/Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/ConsoleApp/ConsoleApp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/ConsoleApp/ConsoleApp.csproj",
+        "projectName": "ConsoleApp",
+        "projectPath": "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/ConsoleApp/ConsoleApp.csproj",
+        "packagesPath": "/Users/celsobianchipuican/.nuget/packages/",
+        "outputPath": "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/ConsoleApp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/celsobianchipuican/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Application/Application.csproj": {
+                "projectPath": "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Application/Application.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Domain/Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Domain/Domain.csproj",
+        "projectName": "Domain",
+        "projectPath": "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Domain/Domain.csproj",
+        "packagesPath": "/Users/celsobianchipuican/.nuget/packages/",
+        "outputPath": "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/celsobianchipuican/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

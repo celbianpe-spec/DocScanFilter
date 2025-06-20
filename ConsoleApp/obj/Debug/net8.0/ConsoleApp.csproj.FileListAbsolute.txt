@@ -1,0 +1,5 @@
+/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/ConsoleApp/obj/Debug/net8.0/ConsoleApp.csproj.AssemblyReference.cache
+/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/ConsoleApp/obj/Debug/net8.0/ConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/ConsoleApp/obj/Debug/net8.0/ConsoleApp.AssemblyInfoInputs.cache
+/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/ConsoleApp/obj/Debug/net8.0/ConsoleApp.AssemblyInfo.cs
+/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/ConsoleApp/obj/Debug/net8.0/ConsoleApp.csproj.CoreCompileInputs.cache
