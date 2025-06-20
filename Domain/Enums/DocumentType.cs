@@ -1,4 +1,4 @@
-namespace DocumentFilteringApp.Domain.Enums
+namespace DocScanFilter.Domain.Enums
 {
     /// <summary>
     /// Enum representing the allowed types of identification documents.

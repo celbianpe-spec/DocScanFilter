@@ -1,83 +1,71 @@
-namespace DocumentFilteringApp.Domain.Entities
+using System;
+using DocScanFilter.Domain.Enums;
+
+namespace DocScanFilter.Domain.Entities
 {
-    /// <summary>
-    /// Represents a scanned identity document with relevant extracted fields.
-    /// </summary>
     public class Document
     {
-        /// <summary>
-        /// Unique identifier for the scan.
-        /// </summary>
-        public int ScanId { get; set; }
+        public int ScanId { get; }
+        public DocumentType DocumentType { get; }
+        public string IssuingCountry { get; }
+        public string LastName { get; }
+        public string FirstName { get; }
+        public string DocumentNumber { get; }
+        public string Nationality { get; }
+        public DateTime? DateOfBirth { get; }
+        public DateTime? DateOfExpiry { get; }
 
-        /// <summary>
-        /// Type of the document (e.g., P = Passport, ID = Identity Card, DL = Driver License).
-        /// </summary>
-        public string DocumentType { get; set; } = string.Empty;
-
-        /// <summary>
-        /// Country that issued the document (ICAO 3-letter format).
-        /// </summary>
-        public string IssuingCountry { get; set; } = string.Empty;
-
-        /// <summary>
-        /// Last name of the document holder.
-        /// </summary>
-        public string LastName { get; set; } = string.Empty;
-
-        /// <summary>
-        /// First name of the document holder.
-        /// </summary>
-        public string FirstName { get; set; } = string.Empty;
-
-        /// <summary>
-        /// Document number (numeric or alphanumeric).
-        /// </summary>
-        public string DocumentNumber { get; set; } = string.Empty;
-
-        /// <summary>
-        /// Nationality of the person (ICAO 3-letter format).
-        /// </summary>
-        public string Nationality { get; set; } = string.Empty;
-
-        /// <summary>
-        /// Date of birth in YYMMDD format.
-        /// </summary>
-        public string DateOfBirth { get; set; } = string.Empty;
-
-        /// <summary>
-        /// Document expiration date in YYMMDD format.
-        /// </summary>
-        public string ExpirationDate { get; set; } = string.Empty;
-
-        /// <summary>
-        /// Checks if a date string in YYMMDD format is valid.
-        /// Assumes all dates are from 21st century.
-        /// </summary>
-        public bool IsValidDate(string date)
+        public Document(
+            int scanId,
+            DocumentType documentType,
+            string issuingCountry,
+            string lastName,
+            string firstName,
+            string documentNumber,
+            string nationality,
+            DateTime? dateOfBirth,
+            DateTime? dateOfExpiry)
         {
-            return DateTime.TryParseExact("20" + date, "yyyyMMdd", null,
-                System.Globalization.DateTimeStyles.None, out _);
+            if (string.IsNullOrWhiteSpace(issuingCountry))
+                throw new ArgumentException("Issuing country is required");
+            if (string.IsNullOrWhiteSpace(lastName))
+                throw new ArgumentException("Last name is required");
+            if (string.IsNullOrWhiteSpace(firstName))
+                throw new ArgumentException("First name is required");
+            if (string.IsNullOrWhiteSpace(documentNumber))
+                throw new ArgumentException("Document number is required");
+            if (string.IsNullOrWhiteSpace(nationality))
+                throw new ArgumentException("Nationality is required");
+
+            ScanId = scanId;
+            DocumentType = documentType;
+            IssuingCountry = NormalizeIcaoCode(issuingCountry);
+            LastName = lastName.Trim();
+            FirstName = firstName.Trim();
+            DocumentNumber = documentNumber.Trim();
+            Nationality = NormalizeIcaoCode(nationality);
+            DateOfBirth = dateOfBirth;
+            DateOfExpiry = dateOfExpiry;
         }
 
-        /// <summary>
-        /// Returns true if the document is expired or has an invalid expiration date.
-        /// </summary>
-        public bool IsExpired()
+        private string NormalizeIcaoCode(string code)
         {
-            return !IsValidDate(ExpirationDate) ||
-                DateTime.ParseExact("20" + ExpirationDate, "yyyyMMdd", null) < DateTime.Today;
+            return code.Length > 3 ? code.Substring(0, 3).ToUpperInvariant() : code.ToUpperInvariant();
         }
 
-        /// <summary>
-        /// Returns the first three characters of the issuing country, uppercased.
-        /// Trims invalid suffixes (e.g., 'USAXX' → 'USA').
-        /// </summary>
-        public string NormalizedIssuingCountry => IssuingCountry[..3].ToUpper();
+        public bool IsSamePerson(Document other)
+        {
+            return string.Equals(FirstName, other.FirstName, StringComparison.OrdinalIgnoreCase)
+                && string.Equals(LastName, other.LastName, StringComparison.OrdinalIgnoreCase)
+                && string.Equals(Nationality, other.Nationality, StringComparison.OrdinalIgnoreCase)
+                && Nullable.Equals(DateOfBirth, other.DateOfBirth);
+        }
 
-        /// <summary>
-        /// Returns the first three characters of the nationality, uppercased.
-        /// </summary>
-        public string NormalizedNationality => Nationality[..3].ToUpper();
+        public bool IsSameDocument(Document other)
+        {
+            return string.Equals(DocumentNumber, other.DocumentNumber, StringComparison.OrdinalIgnoreCase)
+                && string.Equals(IssuingCountry, other.IssuingCountry, StringComparison.OrdinalIgnoreCase)
+                && DocumentType == other.DocumentType;
+        }
     }
 }

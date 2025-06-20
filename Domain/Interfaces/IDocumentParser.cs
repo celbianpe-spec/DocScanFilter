@@ -1,6 +1,6 @@
-using DocumentFilteringApp.Domain.Entities;
+using DocScanFilter.Domain.Entities;
 
-namespace DocumentFilteringApp.Domain.Interfaces
+namespace DocScanFilter.Domain.Interfaces
 {
 
 

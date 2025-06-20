@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
-using DocumentFilteringApp.Domain.Entities;
-using DocumentFilteringApp.Domain.Services;
+using DocScanFilter.Domain.Entities;
+using DocScanFilter.Domain.Services;
 
-namespace DocumentFilteringApp.Application
+namespace DocScanFilter.Application
 {
     public class DocumentService
     {

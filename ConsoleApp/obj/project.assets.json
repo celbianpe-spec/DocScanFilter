@@ -24,6 +24,19 @@
         "runtime": {
           "bin/placeholder/Domain.dll": {}
         }
+      },
+      "Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infrastructure.dll": {}
+        }
       }
     }
   },
@@ -37,11 +50,17 @@
       "type": "project",
       "path": "../Domain/Domain.csproj",
       "msbuildProject": "../Domain/Domain.csproj"
+    },
+    "Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../Infrastructure/Infrastructure.csproj",
+      "msbuildProject": "../Infrastructure/Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "Application >= 1.0.0"
+      "Application >= 1.0.0",
+      "Infrastructure >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -71,6 +90,9 @@
           "projectReferences": {
             "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Application/Application.csproj": {
               "projectPath": "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Application/Application.csproj"
+            },
+            "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Infrastructure/Infrastructure.csproj": {
+              "projectPath": "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Infrastructure/Infrastructure.csproj"
             }
           }
         }
