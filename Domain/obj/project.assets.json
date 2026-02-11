@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "/Users/celsobianchipuican/.nuget/packages/": {}
+    "/home/runner/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Domain/Domain.csproj",
+      "projectUniqueName": "/home/runner/work/DocScanFilter/DocScanFilter/Domain/Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Domain/Domain.csproj",
-      "packagesPath": "/Users/celsobianchipuican/.nuget/packages/",
-      "outputPath": "/Users/celsobianchipuican/Projects/playgoundDeleted/docScanFilter/Domain/obj/",
+      "projectPath": "/home/runner/work/DocScanFilter/DocScanFilter/Domain/Domain.csproj",
+      "packagesPath": "/home/runner/.nuget/packages/",
+      "outputPath": "/home/runner/work/DocScanFilter/DocScanFilter/Domain/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/celsobianchipuican/.nuget/NuGet/NuGet.Config"
+        "/home/runner/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -43,7 +43,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "10.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -64,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.102/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

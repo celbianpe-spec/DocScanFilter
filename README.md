@@ -3,6 +3,121 @@
 ## 🧾 Overview
 DocScanFilter is a C# application designed to parse and validate identity documents from scanned data. It applies business rules to discard invalid or duplicate records. The application follows **Clean Architecture** and **DDD** principles, making the solution modular and testable.
 
+## 📊 Solution Architecture Diagram
+
+```mermaid
+graph TB
+    subgraph "ConsoleApp Layer"
+        Program[Program.cs<br/>Entry Point]
+    end
+    
+    subgraph "Application Layer"
+        DocService[DocumentService<br/>Orchestrates validation]
+    end
+    
+    subgraph "Domain Layer - Core Business Logic"
+        Entity[Document Entity<br/>Domain Model]
+        Validator[DocumentValidator<br/>Business Rules]
+        IParser[IDocumentParser<br/>Interface]
+        Enum[DocumentType Enum<br/>P, DL, ID]
+    end
+    
+    subgraph "Infrastructure Layer"
+        Parser[DocumentParser<br/>CSV Parsing Implementation]
+    end
+    
+    Input[(sample_input.txt<br/>CSV Data)]
+    Output[Console Output<br/>Discarded IDs]
+    
+    Input --> Program
+    Program --> Parser
+    Parser -.implements.-> IParser
+    Parser --> Entity
+    Program --> DocService
+    DocService --> Validator
+    Validator --> Entity
+    Entity --> Enum
+    DocService --> Output
+    
+    style Program fill:#e1f5ff
+    style DocService fill:#fff4e1
+    style Entity fill:#e8f5e9
+    style Validator fill:#e8f5e9
+    style Parser fill:#f3e5f5
+    style Input fill:#fce4ec
+    style Output fill:#fce4ec
+```
+
+### Data Flow
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Program
+    participant Parser
+    participant Document
+    participant DocumentService
+    participant Validator
+    
+    User->>Program: Run Application
+    Program->>Program: Read sample_input.txt
+    
+    loop For each line
+        Program->>Parser: Parse(line)
+        Parser->>Parser: Split CSV fields
+        Parser->>Document: Create Document Entity
+        Document-->>Parser: Validated Document
+        Parser-->>Program: Document
+    end
+    
+    Program->>DocumentService: GetDiscardedScanIds(documents)
+    
+    loop For each document
+        DocumentService->>Validator: IsValid(document)
+        Validator->>Validator: Check Nationality
+        Validator->>Validator: Check Issuing Country
+        Validator->>Validator: Check Expiry Date
+        Validator->>Validator: Check Date Formats
+        Validator-->>DocumentService: true/false
+        
+        alt Document Invalid
+            DocumentService->>DocumentService: Add to discarded list
+        end
+    end
+    
+    DocumentService-->>Program: Sorted discarded IDs
+    Program->>User: Print discarded IDs
+```
+
+### Business Rules Validation Flow
+
+```mermaid
+flowchart TD
+    Start([Document Received]) --> CheckNationality{Nationality in<br/>ESP,FRA,POR,AND,MOR?}
+    CheckNationality -->|No| Discard[❌ Discard Document]
+    CheckNationality -->|Yes| CheckCountry{Issuing Country in<br/>ESP,FRA,POR,AND,MOR?}
+    
+    CheckCountry -->|No| Discard
+    CheckCountry -->|Yes| CheckExpiry{Expiry Date<br/>Valid & Not Expired?}
+    
+    CheckExpiry -->|No| Discard
+    CheckExpiry -->|Yes| CheckDOB{Date of Birth<br/>Valid Format?}
+    
+    CheckDOB -->|No| Discard
+    CheckDOB -->|Yes| CheckExpiryFormat{Expiry Date<br/>Valid Format?}
+    
+    CheckExpiryFormat -->|No| Discard
+    CheckExpiryFormat -->|Yes| Accept[✅ Accept Document]
+    
+    Discard --> End([Add ScanId to<br/>Discarded List])
+    Accept --> End
+    
+    style Start fill:#e3f2fd
+    style Discard fill:#ffebee
+    style Accept fill:#e8f5e9
+    style End fill:#f5f5f5
+```
+
 ## 🏗️ Architecture Structure
 ```
 DocScanFilter/
