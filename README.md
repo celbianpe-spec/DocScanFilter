@@ -94,7 +94,7 @@ sequenceDiagram
 ```mermaid
 flowchart TD
     Start([Document Received]) --> CheckNationality{Nationality in<br/>ESP,FRA,POR,AND,MOR?}
-    CheckNationality -->|No| Discard[❌ Discard Document]
+    CheckNationality -->|No| Discard["DISCARD Document"]
     CheckNationality -->|Yes| CheckCountry{Issuing Country in<br/>ESP,FRA,POR,AND,MOR?}
     
     CheckCountry -->|No| Discard
@@ -107,7 +107,7 @@ flowchart TD
     CheckDOB -->|Yes| CheckExpiryFormat{Expiry Date<br/>Valid Format?}
     
     CheckExpiryFormat -->|No| Discard
-    CheckExpiryFormat -->|Yes| Accept[✅ Accept Document]
+    CheckExpiryFormat -->|Yes| Accept["ACCEPT Document"]
     
     Discard --> End([Add ScanId to<br/>Discarded List])
     Accept --> End
